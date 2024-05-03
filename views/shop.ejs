@@ -108,7 +108,7 @@
                                     </tr>
                                     <tr>
                                         <td><a href="/shopCat?mainCat=Mobile&subCat=USB" style="color: darkslategrey !important;">USB</a></td>
-                                        <td><a href="/shopCat?mainCat=Mobile&subCat=lightningCable" style="color: darkslategrey !important;">Lightening</a></td>
+                                        <td><a href="/shopCat?mainCat=Mobile&subCat=lightningcable" style="color: darkslategrey !important;">Lightening</a></td>
                                         <td><a href="/shopCat?mainCat=Mobile&subCat=wirelessEarphone" style="color: darkslategrey !important;">WirelessEarphones</a></td>
                                       </tr>
                                   </table>
@@ -162,36 +162,32 @@
             </div>
         </div>
 
-        <div class="row product-lists">
-            <% allItems.forEach(function(items){ %>
-            <div class="col-lg-3 col-md-6 text-center strawberry">
-                <div class="single-product-item">
-                    <a class="Wishlist1" href="/addWishlist?mainCat=<%=  items.mainCat  %>&subCat=<%=  items.subCat  %>&color=<%=  items.color  %>&price=<%=  items.price  %>&path=<%=  items.path  %>&_id=<%=  items._id  %>&subCatType=<%=  items.subCatType  %>&name=<%=  items.name  %>"><i class="fas fa-heart" style="font-size: 25px;"></i></a>
-                    <form action="/cart" method="post">
-                    <div class="product-image">
-                        <a href="/singleshop?mainCat=<%=  items.mainCat  %>&subCat=<%=  items.subCat  %>&color=<%=  items.color  %>&price=<%=  items.price  %>&path=<%=  items.path  %>&_id=<%=  items._id  %>&subCatType=<%=  items.subCatType  %>&name=<%=  items.name  %>"><img src="<%= items.path %>" alt="" width="250px" height="270px" ></a>
-                    </div>
-                    <h3><%=  items.mainCat  %> <%=  items.subCat  %></h3>
-                    <p class="product-price"> <%=  items.price  %>Rs </p>
-                    <input type="hidden" name="mainCat" value="<%=  items.mainCat  %>">
-                    <input type="hidden" name="subCat" value="<%=  items.subCat  %>">
-                    <input type="hidden" name="_id" value="<%=  items._id  %>">
-                    <input type="hidden" name="subCatType" value="<%=  items.subCatType  %>">
-                    <input type="hidden" name="name" value="<%=  items.name  %>">
-                    <input type="hidden" name="path" value="<%=  items.path  %>">
-                    <input type="hidden" name="color" value="<%=  items.color  %>">
-                    <input type="hidden" name="price" value="<%=  items.price  %>">
-                    <input type="submit" class="cart-btn" value="Add to Cart">
-                </form>
+     
+    <% allItems.forEach(function(items){ %>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-6 text-center strawberry">
+        <div class="single-product-item">
+            <a class="Wishlist1" href="/addWishlist?mainCat=<%=  items.mainCat  %>&subCat=<%=  items.subCat  %>&color=<%=  items.color  %>&price=<%=  items.price  %>&path=<%=  items.path  %>&_id=<%=  items._id  %>&subCatType=<%=  items.subCatType  %>&name=<%=  items.name  %>"><i class="fas fa-heart" style="font-size: 25px;"></i></a>
+            <form action="/cart" method="post">
+                <div class="product-image">
+                    <a href="/singleshop?mainCat=<%=  items.mainCat  %>&subCat=<%=  items.subCat  %>&color=<%=  items.color  %>&price=<%=  items.price  %>&path=<%=  items.path  %>&_id=<%=  items._id  %>&subCatType=<%=  items.subCatType  %>&name=<%=  items.name  %>"><img src="<%= items.path %>" alt="" width="100%" height="270px" ></a>
                 </div>
-            </div>
-            <% }); %>
-          
-            
-            
-            </div>
+                <h3><%=  items.mainCat  %> <%=  items.subCat  %></h3>
+                <p class="product-price"> <%=  items.price  %>Rs </p>
+                <input type="hidden" name="mainCat" value="<%=  items.mainCat  %>">
+                <input type="hidden" name="subCat" value="<%=  items.subCat  %>">
+                <input type="hidden" name="_id" value="<%=  items._id  %>">
+                <input type="hidden" name="subCatType" value="<%=  items.subCatType  %>">
+                <input type="hidden" name="name" value="<%=  items.name  %>">
+                <input type="hidden" name="path" value="<%=  items.path  %>">
+                <input type="hidden" name="color" value="<%=  items.color  %>">
+                <input type="hidden" name="price" value="<%=  items.price  %>">
+                <input type="submit" class="cart-btn" value="Add to Cart">
+            </form>
         </div>
-
+    </div>
+    <% }); %>
+</div>
+        
         
     </div>
 </div>
